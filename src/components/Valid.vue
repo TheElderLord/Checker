@@ -42,36 +42,69 @@
   
             <div class="form-section">
               <label data-localized="iin-field">ЖСН</label>
-              <input type="text" class="form-control" id="iin-field" v-model="IIN">
+              <input type="text" class="form-control" id="iin-field" v-model="IIN" required>
+              <div class="warning" v-if="IINWarning">{{IINWarning}} </div>
              
-              <div class="help-block with-errors"></div>
+  
             </div>
   
             <div class="form-section">
               <label data-localized="diploma-series-field">Диплом сериясы</label><span style="margin-left: 2px; color: red;">*</span>
-              <input type="text" class="form-control" id="diploma-series-field" v-model="serialNumber">
-              <div class="help-block with-errors"></div>
+              <input type="text" class="form-control" id="diploma-series-field" v-model="serialNumber" required>
+              <div class="warning" v-if="serialNumberWarning">{{serialNumberWarning}}</div>
             </div>
   
             <div class="form-section">
               <label data-localized="diploma-number-field">Диплом нөмірі</label><span style="margin-left: 2px; color: red;">*</span>
-              <input type="text" class="form-control" id="diploma-number-field" v-model="diplomNumber">
-              <div class="help-block with-errors"></div>
+              <input type="text" class="form-control" id="diploma-number-field" v-model="diplomNumber" required>
+              <div class="warning" v-if="diplomNumberWarning">{{diplomNumberWarning}}</div>
             </div>
             
             <div class="form-buttons">
               <button type="button" class="btn btn-success" id="verify-btn" data-localized="verify-btn" @click="checkDiploma()">Тексеру</button>
             </div>
+            <div class="cards" v-if="data" >
+              <router-link :to="{name:'Detail',params:{id:data.id}}">
+              <div class="card" >
+                
+               <div class="org-name">
+                <div class="boldtxt"> Диплом выдан следующей организацией </div>
+               <!-- <div class="regul"> Некоммерческое акционарное общество «Казахский национальный университет имени Аль-Фараби»</div> -->
+                <div class="regul">{{ data.organ_title }}</div> 
+               </div>
+               <div class="full-name">
+                <div  class="boldtxt">Фамилия, имя, отчество выпускника</div>
+                <!-- <div class="regul">Алимбай Абай Кайратбекулы</div> -->
+                 <div class="regul"> {{ data.fullname }}</div>
+               </div>
+               <div class="spec">
+                <div  class="boldtxt">Специальность</div>
+                <!-- <div class="regul">5B020300-История</div> -->
+                 <div class="regul"> {{ data.diplom_number }}</div>
+               </div>
+               <div class="study-period">
+                <div  class="boldtxt">Период обучения</div>
+                <!-- <div class="regul">2017-2021</div> -->
+                 <div class="regul"> {{ data.studying_period }}</div>
+               </div>
+               <div class="study-type">
+                <div  class="boldtxt">Форма обучения</div>
+                <!-- <div class="regul">Очная</div> -->
+                 <div class="regul"> {{ data.study_type }}</div>
+               </div>
+              
+              </div>
+            </router-link>
+              
+             
+            </div>
   
           </div>
-  
+          
+         
         </div>
 
-        <div class="cards">
-          <div class="card">
-            
-          </div>
-        </div>
+       
   
       </div>
 </main>

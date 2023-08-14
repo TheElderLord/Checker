@@ -1,5 +1,5 @@
 <script>
-// import { eventBus } from '../event-bus';
+// import { eventBus } from '../eventBus';
 
 export default {
     data() {
@@ -7,14 +7,20 @@ export default {
             first: 'Проверка валидности дипломов организаций ТиПО',
             second: 'Проверка валидности дипломов вузов',
             third:'Генерация данных по дипломам ТиПО',
-            fourth: 'Генерация данных по дипломам вузов'
+            fourth: 'Генерация данных по дипломам вузов',
+            txt: '',
         }
     },
 
     methods: {
-    // emitHeaderText(text) {
-    //   eventBus.$emit('updateHeaderText', text);
-    // }
+        emitHeaderText(txt) {
+            this.txt = txt;
+            this.$emit('data-sent', this.txt);
+        }
+        
+  },
+  created(){
+    this.emitHeaderText(this.first)
   }
 }
 </script>
@@ -22,18 +28,20 @@ export default {
 <template>
     <aside class="sidebar">
         <div class="menu">
-            <div class="menu"><router-link to="/">{{first}}</router-link></div>
-            <div class="menu"><router-link to="/check-valid" >{{second}}</router-link></div>
-            <div class="menu"><router-link to="/auth">{{third}}</router-link></div>
-            <div class="menu"><router-link to="/auth" >{{fourth}}</router-link></div>
+            <div class="menu"><router-link to="/" @click="emitHeaderText(first)">{{first}}</router-link></div>
+            <div class="menu"><router-link to="/check-valid" @click="emitHeaderText(second)">{{second}}</router-link></div>
+            <div class="menu"><router-link to="/auth" @click="emitHeaderText(third)">{{third}}</router-link></div>
+            <div class="menu"><router-link to="/auth" @click="emitHeaderText(fourth)">{{fourth}}</router-link></div>
         </div>
     </aside>
+
+  
 </template>
 
 <style scoped>
 .sidebar {
     width: 25vw;
-    height: 100vh;
+    height: 50vh;
     background-color: white;
     
     
@@ -45,7 +53,7 @@ export default {
     text-align: center;
     font-size: 1rem;
     font-weight: bold;
-    background-color: #f1f1f1;
+    background-color: #ffffff;
     
     padding: 0.5rem;
     margin-bottom: 0.5rem;
@@ -56,7 +64,13 @@ a{
     color: black;
 }
 
-
+@media (max-width: 768px) {
+    .menu{
+        font-size: .7rem;
+    }
+    /* CSS styles for mobile screens */
+    /* ... */
+}
 
 </style>
 

@@ -1,9 +1,51 @@
 <script type="module" src="./scripts/main.js"></script>
-<style scoped>
+<style >
 @import "./styles/main.css";
 </style>
 
 <template>
+    <main>
+        <div id="contents">
+
+            <div id="userforms">
+            
+              <div id="form" class="bordered-container">
+      
+                <div class="form-section">
+                  <label data-localized="iin-field">ИИН</label>
+                  <input type="text" class="form-control" id="iin-field">
+                  <div class="help-block with-errors"></div>
+                </div>
+      
+                <div class="form-section">
+                  <label data-localized="diploma-series-field">Серия диплома</label><span style="margin-left: 2px; color: red;">*</span>
+                  <select class="form-control" id="diploma-series-field">
+                    <option>ТКБ</option>
+                    <option>БКБ</option>
+                    <option>ОКБ</option>
+                    <option>ОБКБ</option>
+                  </select>
+                  <div class="help-block with-errors"></div>
+                </div>
+      
+                <div class="form-section">
+                  <label data-localized="diploma-number-field">Номер диплома</label><span style="margin-left: 2px; color: red;">*</span>
+                  <input type="text" class="form-control" id="diploma-number-field">
+                  <div class="help-block with-errors"></div>
+                </div>
+               
+                <div class="form-buttons">
+                  <button type="button" class="btn btn-success" id="verify-btn" data-localized="verify-btn">Проверить</button>
+                </div>
+      
+              </div>
+      
+            </div>
+      
+          </div>
+    </main>
+</template>
+<!-- <template>
    <main>
         <header>
             <h1>{{main_page}}</h1>
@@ -84,4 +126,4 @@
         </footer>
     </div>
    </main>
-</template>
+</template> -->

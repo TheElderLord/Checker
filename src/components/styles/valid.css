@@ -247,3 +247,46 @@ input {
 table {
     border-collapse: collapse;
 }
+
+.cards{
+    margin-top: 3%;
+    
+    
+}
+.card{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    padding:2%;
+    margin: 1% 0 0 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+.boldtxt{
+    margin-top: 0.5%;
+    width: 20vw;
+    font-weight: bold;
+    text-align: center;
+}
+.regul{
+    margin-top: 0.5%;
+    width: 40vw;
+    text-align: center;
+}
+.card>div{
+    display: flex;
+   
+}
+.cards a{
+    text-decoration: none;
+    color: black;
+}
+
+.warning {
+    
+    
+    color: red;
+
+}

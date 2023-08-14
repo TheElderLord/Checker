@@ -12,11 +12,18 @@ export default {
       serialNumber: "",
       number: "",
       img_link: "",
+
+      vite_host: import.meta.env.VITE_SERVER_BACKEND_HOST,
+      
     };
   },
+ 
   methods: {
     async addRecord() {
-        const response = await fetch("http://localhost:3000/add", {
+        
+        const backHost = import.meta.env.VITE_SERVER_BACKEND_HOST;
+        const backport = import.meta.env.VITE_SERVER_BACKEND_PORT;
+        const response = await fetch(`http://${backHost}:${backport}/add`, {
             method: "POST",
             headers: {
             "Content-Type": "application/json",
@@ -34,14 +41,14 @@ export default {
         });
         const data = await response.json();
 
-        // this.fullname = '';
-        // this.iin = '';
-        // this.birthday = '';
-        // this.organ_title = '';
-        // this.studying_period = '';
-        // this.type = '';
-        // this.serialNumber = '';
-        // this.number = '';
+        this.fullname = '';
+        this.iin = '';
+        this.birthday = '';
+        this.organ_title = '';
+        this.studying_period = '';
+        this.type = '';
+        this.serialNumber = '';
+        this.number = '';
         
         this.img_link = data;
         console.log(this.img_link);
@@ -51,6 +58,7 @@ export default {
             this.pop_up = !this.pop_up;
             console.log(this.pop_up)
         }
+        
   },
   
 };
