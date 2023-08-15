@@ -22,7 +22,7 @@ const router = createRouter({
 
         },
         {
-            path: '/:id',
+            path: '/records/:id',
             name: 'Detail',
             component: () => Detail,
             props: true
