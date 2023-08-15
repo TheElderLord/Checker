@@ -4,10 +4,14 @@
 </style>
 
 <template>
-    <main class="{}">
+    <main >
+        <div class="popup-overlay" v-if="pop_up">
+
+        </div>
         <header>
             <h3>Добавить запись</h3>
         </header>
+        
         <div class="container">
             <div class="title"><h3>Запись</h3></div>
             <div class="form">
@@ -20,9 +24,10 @@
                 <input type="text" v-model="type" name="type" placeholder="Формат обучения" required>
                 <input type="text" v-model="serialNumber" name="serialNumber" placeholder="Серийный номер" required>
                 <input type="text" v-model="number" name="number" placeholder="Номер диплома" required>
+                <div class="warning" v-if="warning">Заполните все поля</div>
 
                 <button @click="addRecord()" >Добавить</button>
-                <button @click="pops()" >Создать QR</button>
+                <button @click="pops()" v-if="img_link">Создать QR</button>
                
             </div>
                 
@@ -37,6 +42,34 @@
                     <a :href="`${img_link}`" download="image.jpg">Скачать</a>
                   <button @click="pops()" >Закрыть</button>
                 </div>
+            </div>
+
+            <div class="cards">
+            <div class="card">
+                <div class="fullname">
+                    Ф.И.О
+            </div>
+            <div class="iin">
+                ИИН
+            </div>
+            <div class="birthday">
+                День рождения
+                </div>
+             </div>
+            </div>
+            <div class="cards" v-for="d in data" :key="d.id">
+                
+                <div class="card">
+                    <div class="fullname">
+                   {{ d.fullname }}
+                </div>
+                <div class="iin">
+                    {{ d.iin }}
+                </div>
+                <div class="birthday">
+                    {{ d.birthday }}
+                    </div>
+                 </div>
             </div>
             
            </div>

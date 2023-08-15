@@ -10,13 +10,21 @@ export default {
   },
   data() {
     return {
-      headerTxt: '',
+      headerTxt: 'Сервис',
+      
      
     };
   },
+  
   methods: {
     receiveDataFromChild(data) {
       this.headerTxt = data;
+    },
+   
+  },
+  computed: {
+    shown() {
+      return this.$route.path !== '/';
     },
   },
 }
@@ -28,7 +36,21 @@ export default {
      <h1>{{ headerTxt  }}</h1>
       
     </div>
-    <div class="sidebar-wrapper">
+    <div class="menus" v-if="!shown">
+      <div class="menu">
+        <router-link to="/main">Проверка валидности дипломов организаций ТиПО</router-link>
+      </div>
+      <div class="menu">
+        <router-link to="/valid">Проверка валидности дипломов вуза</router-link>
+      </div>
+      <div class="menu">
+        <router-link to="/auth">Генерация данных по ТиПО</router-link>
+      </div>
+      <div class="menu">
+        <router-link to="/auth">Генерация данных по дипломам ВУЗ</router-link>
+      </div>
+    </div>
+    <div class="sidebar-wrapper" v-if="shown">
       <Sidebar @data-sent="receiveDataFromChild"/>
     </div>
     <div class="router-wrapper">
@@ -57,6 +79,25 @@ export default {
   margin: 0;
   padding: 0;
   font-size: 2vw;
+}
+
+.menus{
+  display: flex;
+  align-items: center;
+  margin-top: 10vh;
+  height: 70vh;
+}
+
+.menu{
+  background-color: white;
+  text-align: center;
+  margin: 1rem;
+  padding: 1rem;
+}
+.menu a{
+  color:black;
+  text-decoration: none;
+  
 }
 .sidebar-wrapper {
   position: fixed;

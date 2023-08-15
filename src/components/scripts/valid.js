@@ -6,7 +6,7 @@ export default {
             IIN: null,
             serialNumber: null,
             diplomNumber: null,
-            data: null,
+            data: '',
 
             //warnings
             IINWarning: null,
@@ -25,17 +25,21 @@ export default {
             if (this.serialNumber == null) this.serialNumberWarning = "Заполните поле";
             if (this.diplomNumber == null) this.diplomNumberWarning = "Заполните поле";
             else if (this.IIN != null && this.serialNumber != null && this.diplomNumber != null) {
+                this.IINWarning = null;
+                this.serialNumberWarning = null;
+                this.diplomNumberWarning = null;
              await axios.get(`http://${backHost}:${backPort}/search?iin=${this.IIN}&serialNumber=${this.serialNumber}&number=${this.diplomNumber}`).then((response) => {
                 this.data = response.data[0];
                 console.log(this.data.fullname);
-                // if(this.data.fullname ==undefined)
-                // this.data = null;
+                if(this.data.fullname ==undefined)
+                this.data = null;
 
                 
             }).catch((error) => {
                 console.log(error);
             });
         }
+        
         
         },
 

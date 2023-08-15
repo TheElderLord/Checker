@@ -268,16 +268,21 @@ table {
     margin-top: 0.5%;
     width: 20vw;
     font-weight: bold;
-    text-align: center;
+    text-align: left;
 }
 .regul{
     margin-top: 0.5%;
     width: 40vw;
-    text-align: center;
+    text-align: left;
 }
 .card>div{
     display: flex;
    
+}
+.card-text{
+    color: #28a745;
+    font-weight: bold;
+    
 }
 .cards a{
     text-decoration: none;
@@ -289,4 +294,18 @@ table {
     
     color: red;
 
+}
+
+.notdata-text{
+    color:red;
+}
+.notdata-butt{
+    background-color: #28a745;;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    width: fit-content;
+}
+.notdata-butt a{
+    text-decoration: none;
+    color: white
 }

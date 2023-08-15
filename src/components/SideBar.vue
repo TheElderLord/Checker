@@ -28,7 +28,7 @@ export default {
 <template>
     <aside class="sidebar">
         <div class="menu">
-            <div class="menu"><router-link to="/" @click="emitHeaderText(first)">{{first}}</router-link></div>
+            <div class="menu"><router-link to="/main" @click="emitHeaderText(first)">{{first}}</router-link></div>
             <div class="menu"><router-link to="/check-valid" @click="emitHeaderText(second)">{{second}}</router-link></div>
             <div class="menu"><router-link to="/auth" @click="emitHeaderText(third)">{{third}}</router-link></div>
             <div class="menu"><router-link to="/auth" @click="emitHeaderText(fourth)">{{fourth}}</router-link></div>
