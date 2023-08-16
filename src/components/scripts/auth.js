@@ -12,9 +12,7 @@ export default {
             if (this.login == "admin" && this.password == "admin") {
                 this.$router.push({
                     path: '/admin',
-                    query: {
-                      lang: this.lang,
-                    }
+                    query: { lang:this.lang } 
                   });
             }
             // const response = await fetch("http://localhost:3000/auth", {

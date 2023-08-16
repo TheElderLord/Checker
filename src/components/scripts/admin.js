@@ -77,6 +77,7 @@ export default {
         
   },
   mounted() {
+    console.log(this.lang);
     this.fetchdata();
   }
   
