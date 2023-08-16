@@ -1,4 +1,5 @@
 export default {
+    props:['lang'],
     data() {
         return {
             login: "",
@@ -7,6 +8,7 @@ export default {
     },
     methods: {
         async auth() {
+            
             if (this.login == "admin" && this.password == "admin") {
                 this.$router.push("/admin");
             }

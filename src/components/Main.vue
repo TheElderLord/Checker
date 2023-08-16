@@ -1,5 +1,5 @@
 <script type="module" src="./scripts/main.js"></script>
-<style >
+<style>
 @import "./styles/main.css";
 </style>
 
@@ -12,13 +12,13 @@
               <div id="form" class="bordered-container">
       
                 <div class="form-section">
-                  <label data-localized="iin-field">ИИН</label>
+                  <label data-localized="iin-field">{{ lang === 'rus' ? 'ИИН' : lang === 'kz' ? 'ЖСН' : 'IIN' }}</label>
                   <input type="text" class="form-control" id="iin-field">
                   <div class="help-block with-errors"></div>
                 </div>
       
                 <div class="form-section">
-                  <label data-localized="diploma-series-field">Серия диплома</label><span style="margin-left: 2px; color: red;">*</span>
+                  <label data-localized="diploma-series-field">{{lang === 'rus' ? 'Серия диплома' : lang ==='kz' ? 'Диплом сериясы' : 'Diploma series'}}</label><span style="margin-left: 2px; color: red;">*</span>
                   <select class="form-control" id="diploma-series-field">
                     <option>ТКБ</option>
                     <option>БКБ</option>
@@ -29,13 +29,15 @@
                 </div>
       
                 <div class="form-section">
-                  <label data-localized="diploma-number-field">Номер диплома</label><span style="margin-left: 2px; color: red;">*</span>
+                  <label data-localized="diploma-number-field">{{lang === 'rus' ? 'Номер диплома' : lang ==='kz' ? 'Диплом номері' : 'Diploma number'}}</label><span style="margin-left: 2px; color: red;">*</span>
                   <input type="text" class="form-control" id="diploma-number-field">
                   <div class="help-block with-errors"></div>
                 </div>
                
                 <div class="form-buttons">
-                  <button type="button" class="btn btn-success" id="verify-btn" data-localized="verify-btn">Проверить</button>
+                  <button type="button" class="btn btn-success" id="verify-btn" data-localized="verify-btn">
+                    {{ lang === 'rus' ? 'Проверить' : lang === 'kz' ? 'Тексеру' : 'Verify' }}
+                  </button>
                 </div>
       
               </div>

@@ -1,6 +1,7 @@
 import axios from "axios"
 
 export default {
+    props: ['lang'],
     data() {
         return {
             IIN: null,
@@ -14,6 +15,9 @@ export default {
             diplomNumberWarning: null,
 
         }
+    },
+    created() {
+        console.log(this.lang);
     },
     methods: {
          async checkDiploma() {

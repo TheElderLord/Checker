@@ -1,10 +1,11 @@
 export default {
-    props:['id'],
+    props:['id','lang'],
     data() {
         return {
             data:null,
         }
     },
+    
 
     methods: {
         async getData() {
@@ -13,11 +14,13 @@ export default {
             const response = await fetch(`http://${backhost}:${backport}/records/${this.id}`);
             const data = await response.json();
             this.data = data[0];
-            console.log(this.data.fullname);
+            
         }
     },
-    created() {
-        this.getData();
+    async mounted() {
         console.log(this.id);
+        console.log(this.lang);
+        
+        await this.getData(); // Wait for the API request to complete
     },
 }

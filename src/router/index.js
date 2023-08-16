@@ -12,31 +12,38 @@ const router = createRouter({
             path: '/main',
             name: 'Main',
             component: () => Main,
+            props: (route) => ({ lang: route.query.lang }),
             
         },
         {
             path: '/check-valid',
             name: 'CheckValid',
             component: () => Valid,
+            props: (route) => ({ lang: route.query.lang }),
 
 
         },
         {
-            path: '/records/:id',
+            path: '/records',
             name: 'Detail',
             component: () => Detail,
-            props: true
+            props: (route) => ({
+                lang: route.query.lang,
+                id: route.query.id
+              }),
         },
         {
             path: '/auth',
             name: 'Auth',
-            component: () => Auth
+            component: () => Auth,
+            props: (route) => ({ lang: route.query.lang }),
         
         },
         {
             path: '/admin',
             name: 'Admin',
             component: () => Admin,
+            props: (route) => ({ lang: route.query.lang }),
             
         },
 

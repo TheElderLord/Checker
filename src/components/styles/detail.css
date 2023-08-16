@@ -15,6 +15,7 @@
     margin: 1% 0 0 0;
     width: 100%;
     background-color: #fff;
+    border-radius: 1rem;
     box-shadow: 0 0 8px rgba(0,0,0,0.2);
 }
 .boldtxt{
@@ -31,5 +32,33 @@
 .card>div{
     display: flex;
    
+}
+
+@media (max-width: 425px) {
+    .boldtxt{
+        width: 100%;
+        
+    }
+    .regul{
+        width: 100%;
+    }
+    .card{
+        width: 100%;
+    }
+    .card>div{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .cards{
+        margin-top: 3%;
+        width: 100%;
+    }
+    .container{
+        text-align: center;
+        width: 100%;
+    }
+    
 }
 

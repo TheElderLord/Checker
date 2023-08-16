@@ -6,13 +6,13 @@
 <template>
     <main>
         <div class="container">
-            <div class="header">Вход в систему</div>
+            <div class="header">{{lang === 'rus' ? 'Вход в систему' : lang === 'kz' ? 'Жүйеге кіру' : 'Log in to system'}}</div>
             <div class="form">
-                <label for="login">Имя пользователя</label>
+                <label for="login">{{lang === 'rus' ? 'Имя пользователя' : lang === 'kz' ? 'Тұтынушы аты' : 'Username'}}</label>
                 <input type="text" id="login" placeholder="Логин" v-model="login">
-                <label for="password">Пароль</label>
+                <label for="password">{{lang === 'rus' ? 'Пароль' : lang === 'kz' ? 'Құпиясөз' : 'Password'}}</label>
                 <input type="password" id="password" placeholder="Пароль" v-model="password">
-                <button @click="auth()">Войти</button>
+                <button @click="auth()">{{lang === 'rus' ? 'Войти' : lang === 'kz' ? 'Кіру' : 'Log in'}}</button>
             </div>
         </div>
     </main>    
