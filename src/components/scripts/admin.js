@@ -1,5 +1,6 @@
 
 export default {
+  props: ['lang'],
   data() {
     return {
       pop_up: false,
@@ -44,6 +45,7 @@ export default {
             type: this.type,
             serialNumber: this.serialNumber,
             number: this.number,
+            lang: this.lang,
             }),
         });
         const data = await response.json();
