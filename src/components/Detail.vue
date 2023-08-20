@@ -6,7 +6,7 @@
 <template>
 
    <main>
-    <div class="container">{{lang === 'rus' ? 'Информация' : lang === 'kaz' ? 'Ақпарат' : 'Information'}}
+    <div class="container">{{lang === 'rus' ? 'Информация' : lang === 'kz' ? 'Ақпарат' : 'Information'}}
       <div class="cards" v-if="data" >
          <div class="card" >
           <div class="org-name">

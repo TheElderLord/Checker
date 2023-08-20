@@ -57,16 +57,16 @@
             <div class="cards">
             <div class="card">
                 <div class="fullname">
-                    Ф.И.О
+                    {{ lang === 'rus' ? 'Ф.И.О' : lang === 'kz' ? 'Аты-жөні' : 'Full Name'  }}
             </div>
             <div class="iin">
-                ИИН
+                {{ lang === 'rus' ? 'ИИН' : lang === 'kz' ? 'ЖСН' : 'ID Number' }}  
             </div>
             <div class="birthday">
-                День рождения
+                {{ lang === 'rus' ? 'День рождения' : lang === 'kz' ? 'Туған күні' : 'Date of Birth' }}
               </div>
               <div class="birthday">
-                Действия
+                {{ lang === 'rus' ? 'Организация' : lang === 'kz' ? 'Ұйым' : 'Organization' }}
               </div>
              </div>
             </div>
@@ -86,11 +86,13 @@
                   <div class="control">
                     <router-link :to="{ path: '/edit', query: { lang,id:d.id } }">
                   <div class="edit">
-                    Edit
+                    {{ lang === 'rus' ? 'Редактировать' : lang === 'kz' ? 'Өңдеу' : 'Edit'  }}
                   </div>
                 </router-link>
                   <div class="delete">
-                    <button @click="deleteRecord(d.id)" class="delete">Delete</button>
+                    <button @click="deleteRecord(d.id)" class="delete">
+                      {{ lang === 'rus' ? 'Удалить' : lang === 'kz' ? 'Жою' : 'Delete' }}
+                    </button>
                 </div>
               </div>
                   

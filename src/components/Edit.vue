@@ -87,7 +87,7 @@ export default {
   <main>
 
     <div class="container">
-      <div class="title">Edit</div>
+      <div class="title">{{lang === 'rus' ? 'Редактировать': lang === 'kz' ? 'Өңдеу':'Edit' }}</div>
       <div class="form">
         <div>
           <input type="text" v-model="fullname" name="fullname"

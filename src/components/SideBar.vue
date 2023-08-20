@@ -140,6 +140,7 @@ export default {
     padding: 0.5rem;
     margin-bottom: 0.5rem;
     cursor: pointer;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 a {
@@ -150,7 +151,8 @@ a {
 @media (max-width: 425px) {
     .menu {
         font-size: .6rem;
-        text-align: left;
+        text-align: center;
+        font-weight: bold;
         
     }
     

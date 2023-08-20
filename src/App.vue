@@ -181,6 +181,16 @@ export default {
 
 
 @media (max-width: 425px) {
+  .header-wrapper{
+    display: block;
+    height: 15vh;
+  }
+  .sidebar-wrapper{
+    top:15%;
+  }
+  .router-wrapper{
+    margin-top:15vh;
+  }
   .header-wrapper h1{
     font-size: 5vw;
   }
