@@ -4,6 +4,7 @@ import Valid from '../components/Valid.vue'
 import Detail from '../components/Detail.vue'
 import Admin from '../components/Admin.vue'
 import Auth from '../components/Auth.vue'
+import Edit from '../components/Edit.vue'
 
 const router = createRouter({
     history:createWebHistory(),
@@ -46,6 +47,13 @@ const router = createRouter({
             props: (route) => ({ lang: route.query.lang }),
             
         },
+        {
+            path: '/edit',
+            name: 'Edit',
+            component: () => Edit,
+            props: (route) => ({ lang: route.query.lang,id: route.query.id }),
+
+        }
 
 
           

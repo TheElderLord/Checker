@@ -22,7 +22,12 @@ export default {
       this.headerTxt = data;
     },
     changeLang(newLang){
-      this.$router.push({ path: this.$route.path, query: { lang: newLang } });
+      const currentQuery = { ...this.$route.query }; // Copy the existing query parameters
+      currentQuery.lang = newLang; // Update the language parameter
+
+      this.$router.push({ path: this.$route.path, query: currentQuery });
+      
+      // Update the component's local lang state if needed
       this.lang = newLang;
     }
   },

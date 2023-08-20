@@ -26,12 +26,12 @@ export default {
         
         const backHost = import.meta.env.VITE_SERVER_BACKEND_HOST;
         const backport = import.meta.env.VITE_SERVER_BACKEND_PORT;
-        if(this.fullname == '' || this.iin == '' || this.birthday == '' || this.organ_title == '' || this.studying_period == '' || this.type == '' || this.serialNumber == '' || this.number == ''){
+        if(this.fullname == ''  || this.birthday == '' || this.organ_title == '' || this.studying_period == '' || this.type == '' || this.serialNumber == '' || this.number == ''){
           this.warning = true;
           return;
         }
         this.warning = false;
-        const response = await fetch(`http://${backHost}:${backport}/add`, {
+        const response = await fetch(`http://${backHost}:${backport}/records`, {
             method: "POST",
             headers: {
             "Content-Type": "application/json",
@@ -61,6 +61,7 @@ export default {
         
         this.img_link = data;
         console.log(this.img_link);
+        this.fetchdata();
         // console.log(data);
         },
         pops() {
@@ -73,6 +74,17 @@ export default {
           const response = await fetch(`http://${backHost}:${backport}/records`);
           this.data = await response.json();
           console.log(this.data);
+        },
+        async deleteRecord(id){
+          const backHost = import.meta.env.VITE_SERVER_BACKEND_HOST;
+          const backport = import.meta.env.VITE_SERVER_BACKEND_PORT;
+          const response = await fetch(`http://${backHost}:${backport}/records/${id}`, {
+            method: "DELETE",
+            headers: {
+            "Content-Type": "application/json",
+            },
+        });
+          this.data = await response.json();
         }
         
   },

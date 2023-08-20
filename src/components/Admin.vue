@@ -64,12 +64,16 @@
             </div>
             <div class="birthday">
                 День рождения
-                </div>
+              </div>
+              <div class="birthday">
+                Действия
+              </div>
              </div>
             </div>
             <div class="cards" v-for="d in data" :key="d.id">
                 
                 <div class="card">
+                 
                     <div class="fullname">
                    {{ d.fullname }}
                 </div>
@@ -78,8 +82,20 @@
                 </div>
                 <div class="birthday">
                     {{ d.birthday }}
-                    </div>
+                  </div>
+                  <div class="control">
+                    <router-link :to="{ path: '/edit', query: { lang,id:d.id } }">
+                  <div class="edit">
+                    Edit
+                  </div>
+                </router-link>
+                  <div class="delete">
+                    <button @click="deleteRecord(d.id)" class="delete">Delete</button>
+                </div>
+              </div>
+                  
                  </div>
+                  
             </div>
             
            </div>
