@@ -147,7 +147,7 @@ export default {
 }
 
 .menu{
-  background-color: white;
+  
   text-align: center;
   margin: 1rem;
   padding: 1rem;
@@ -217,6 +217,10 @@ export default {
   }
   /* CSS styles for mobile screens */
   /* ... */
+}
+@media (max-width: 320px){
+  
+  
 }
 </style>
 

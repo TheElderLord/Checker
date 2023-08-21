@@ -61,4 +61,12 @@
     }
     
 }
+@media (max-width: 320px) {
+    .boldtxt{
+        font-size: 0.7rem;
+    }
+    .regul{
+        font-size: 0.7rem;
+    }
 
+}
