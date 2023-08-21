@@ -55,6 +55,7 @@ export default {
       <div class="langtxt">eng</div></div>
     </div>
     </div>
+    <div class="acc">Введутся технические работы</div>
     <div class="menus" v-if="!shown">
       <div class="menu">
         <router-link :to="{ path: '/main', query: { lang } }">{{ lang === 'rus' ? 'Проверка валидности дипломов организаций ТиПО' : lang === 'kz' ? 'ТжКБ ұйымдары дипломдарының дұрыстығын тексеру' : 'Validation of University Diplomas' }}</router-link>
@@ -81,6 +82,14 @@ export default {
 </template>
 
 <style scoped>
+.acc{
+  margin-top: 15vh;
+  color: red;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  text-align: center;
+}
 .header-wrapper{
   position: fixed;
   top: 0;
@@ -172,7 +181,7 @@ export default {
 .router-wrapper{
   margin-left: 25vw;
   width: 75vw;
-  margin-top: 10vh;
+  /* margin-top: 10vh; */
 
   padding: 1%;
   
