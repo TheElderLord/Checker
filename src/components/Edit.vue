@@ -38,6 +38,7 @@ export default {
       this.type = d.study_type;
       this.serialNumber = d.serial_number;
       this.number = d.diplom_number;
+      this.speiality = d.specialty;
       
 
     },
