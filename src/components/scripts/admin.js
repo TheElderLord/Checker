@@ -12,6 +12,7 @@ export default {
       type: "",
       serialNumber: "",
       number: "",
+      speciality: "",
       img_link: "",
 
       vite_host: import.meta.env.VITE_SERVER_BACKEND_HOST,
@@ -46,6 +47,7 @@ export default {
             serialNumber: this.serialNumber,
             number: this.number,
             lang: this.lang,
+            speciality: this.speciality,
             }),
         });
         const data = await response.json();
@@ -58,6 +60,7 @@ export default {
         this.type = '';
         this.serialNumber = '';
         this.number = '';
+        this.speciality = '';
         
         this.img_link = data;
         console.log(this.img_link);

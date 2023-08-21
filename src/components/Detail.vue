@@ -25,7 +25,7 @@
            <div  class="boldtxt">{{lang ==='rus' ? 'Специальность'
             : lang === 'kz' ? 'Мамандық': 'Speciality'}}</div>
            <!-- <div class="regul">5B020300-История</div> -->
-           <div class="regul"> {{ data.diplom_number }}</div>
+           <div class="regul"> {{ data.speciality }}</div>
           </div>
           <div class="study-period">
            <div  class="boldtxt">{{lang ==='rus' ? 'Период обучения'

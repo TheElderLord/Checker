@@ -25,6 +25,7 @@
                     <input type="text" v-model="type" name="type" :placeholder="lang === 'rus' ? 'Формат обучения' : lang === 'kz' ? 'Оқу форматы' : 'Study Format'" required>
                     <input type="text" v-model="serialNumber" name="serialNumber" :placeholder="lang === 'rus' ? 'Серийный номер' : lang === 'kz' ? 'Сериялық нөмір' : 'Serial Number'" required>
                     <input type="text" v-model="number" name="number" :placeholder="lang === 'rus' ? 'Номер диплома' : lang === 'kz' ? 'Диплом нөмірі' : 'Diploma Number'" required>
+                    <input type="text" v-model="speciality" name="speciality" :placeholder="lang === 'rus' ? 'Специальность' : lang==='kz' ? 'Мамандық' : 'Speciality'">
                     <div class="warning" v-if="warning">{{ lang === 'rus' ? 'Заполните все поля' : lang === 'kz' ? 'Барлық жолдарды толтырыңыз' : 'Please fill in all fields' }}</div>
 
 
