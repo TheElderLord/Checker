@@ -89,6 +89,7 @@ export default {
   justify-content: center;
   font-weight: bold;
   text-align: center;
+  margin-left: 25vw;
 }
 .header-wrapper{
   position: fixed;
@@ -198,7 +199,7 @@ export default {
     top:15%;
   }
   .router-wrapper{
-    margin-top:15vh;
+    margin-top:1vh;
   }
   .header-wrapper h1{
     font-size: 5vw;
