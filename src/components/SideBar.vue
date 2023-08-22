@@ -160,7 +160,7 @@ a {
     .menu {
         padding: 0.5rem;
         margin: 0;
-        font-size: .5rem;
+        font-size: 1rem;
         text-align: center;
         font-weight: bold;
         text-align: center;
