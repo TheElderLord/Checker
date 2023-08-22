@@ -147,15 +147,32 @@ a {
     color: black;
 }
 
-@media (max-width: 425px) {
+@media (min-width: 320px) and (max-width: 425px) {
+   
+    .sidebar {
+        width: 100vw;
+        height: fit-content;
+        background-color: white;
+    
+    
+    }
+    
     .menu {
+        padding: 0.5rem;
+        margin: 0;
         font-size: .5rem;
         text-align: center;
         font-weight: bold;
         text-align: center;
         margin-right: 5%;
-        
+        border-bottom: 1px solid #e5e5e5;
     }
+    
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    
     
 
     /* CSS styles for mobile screens */

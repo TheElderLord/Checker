@@ -55,7 +55,7 @@ export default {
       <div class="langtxt">eng</div></div>
     </div>
     </div>
-    <div class="acc">Введутся технические работы</div>
+    <div class="acc">Ведутся технические работы</div>
     <div class="menus" v-if="!shown">
       <div class="menu">
         <router-link :to="{ path: '/main', query: { lang } }">{{ lang === 'rus' ? 'Проверка валидности дипломов организаций ТиПО' : lang === 'kz' ? 'ТжКБ ұйымдары дипломдарының дұрыстығын тексеру' : 'Validation of University Diplomas' }}</router-link>
@@ -190,7 +190,7 @@ export default {
 }
 
 
-@media (max-width: 425px) {
+@media (min-width: 320px) and (max-width: 425px) {
   .header-wrapper{
     display: block;
     height: 15vh;
@@ -205,10 +205,12 @@ export default {
     font-size: 5vw;
   }
   .title{
+    height: 7vh;
     width: fit-content;
   }
   .lang{
     width: fit-content;
+  
   }
   .icon{
     margin: 0;
@@ -224,6 +226,32 @@ export default {
     width: fit-content;
     padding: 0.4rem;
     
+  }
+  .sidebar-wrapper {
+    position: fixed;
+    top: 15%;
+    left: 0;
+    height: fit-content;
+    width: 100%;
+    
+    z-index: 100;
+    background-color: white;
+    margin:0;
+    
+  }
+  .acc{
+    
+    color: red;
+    margin: 35vh 0 0 0 ;
+  }
+  .router-wrapper{
+    margin: 0 auto;
+    width: 100%;
+     
+  
+    padding: 1%;
+    
+   
   }
   /* CSS styles for mobile screens */
   /* ... */
