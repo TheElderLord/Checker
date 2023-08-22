@@ -198,14 +198,12 @@ export default {
   .sidebar-wrapper{
     top:15%;
   }
-  .router-wrapper{
-    margin-top:1vh;
-  }
+  
   .header-wrapper h1{
     font-size: 5vw;
   }
   .title{
-    height: 7vh;
+    height: 8vh;
     width: fit-content;
   }
   .lang{
@@ -242,10 +240,10 @@ export default {
   .acc{
     
     color: red;
-    margin: 35vh 0 0 0 ;
+    margin: 45vh 0 0 0 ;
   }
   .router-wrapper{
-    margin: 0 auto;
+    margin: 1rem 0 0 0 ;
     width: 100%;
      
   

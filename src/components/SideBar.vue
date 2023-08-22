@@ -158,12 +158,14 @@ a {
     }
     
     .menu {
+        flex: 1;
         padding: 0.5rem;
         margin: 0;
-        font-size: 1rem;
-        text-align: center;
-        font-weight: bold;
-        text-align: center;
+        font-size: 0.9rem;
+        font-weight: normal;
+        text-align:left;
+      
+        
         margin-right: 5%;
         border-bottom: 1px solid #e5e5e5;
     }
