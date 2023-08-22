@@ -270,6 +270,12 @@ export default {
   .header-wrapper{
     height: 15vh;
   }
+  .sidebar-wrapper{
+    margin-top: 8%;
+  }
+  .acc{
+    margin-top: 15vh;
+  }
   .title{
     width:50%;
   }
