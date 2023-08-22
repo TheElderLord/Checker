@@ -267,6 +267,9 @@ export default {
   /* ... */
 }
 @media (max-width: 320px){
+  .header-wrapper{
+    height: 15vh;
+  }
   .title{
     width:50%;
   }
