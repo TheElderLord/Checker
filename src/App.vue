@@ -271,7 +271,7 @@ export default {
     height: 15vh;
   }
   .sidebar-wrapper{
-    margin-top: 8%;
+    margin-top: 10%;
   }
   .acc{
     margin-top: 15vh;
