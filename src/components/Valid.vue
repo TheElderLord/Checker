@@ -1,5 +1,5 @@
 <script type="module" src="./scripts/valid.js"></script>
-<style scoped>
+<style >
 @import "./styles/valid.css";
 </style>
 

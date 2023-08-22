@@ -309,3 +309,15 @@ table {
     text-decoration: none;
     color: white
 }
+@media (min-width: 320px) and (max-width: 425px) {
+    .collapse-content{
+     font-size: 0.5rem;
+    }
+    #form{
+        font-size: 0.6rem;
+    }
+    .btn-success{
+        font-size: 0.6rem;
+    }
+    
+ }

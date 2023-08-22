@@ -55,7 +55,7 @@ export default {
       <div class="langtxt">eng</div></div>
     </div>
     </div>
-    <div class="acc">Ведутся технические работы</div>
+   
     <div class="menus" v-if="!shown">
       <div class="menu">
         <router-link :to="{ path: '/main', query: { lang } }">{{ lang === 'rus' ? 'Проверка валидности дипломов организаций ТиПО' : lang === 'kz' ? 'ТжКБ ұйымдары дипломдарының дұрыстығын тексеру' : 'Validation of University Diplomas' }}</router-link>
@@ -75,6 +75,7 @@ export default {
       <Sidebar @data-sent="receiveDataFromChild" :lang="lang"/>
     </div>
     <div class="router-wrapper">
+      <div class="acc">Ведутся технические работы</div>
       <router-view />
     </div>
     
@@ -82,14 +83,18 @@ export default {
 </template>
 
 <style scoped>
+#app{
+  background-color: aliceblue ;
+  
+}
 .acc{
-  margin-top: 15vh;
+  margin-top: 12vh;
   color: red;
   display: flex;
   justify-content: center;
   font-weight: bold;
   text-align: center;
-  margin-left: 25vw;
+  
 }
 .header-wrapper{
   position: fixed;
@@ -169,13 +174,13 @@ export default {
 }
 .sidebar-wrapper {
   position: fixed;
-  top: 10%;
+  top: 8%;
   left: 0;
   bottom: 0;
   width: 25vw;
   height: 50vh;
   z-index: 100;
-  background-color: white;
+ 
   margin:0;
   padding: 1% 0.5% 0 0.5%;
 }
@@ -191,23 +196,30 @@ export default {
 
 
 @media (min-width: 320px) and (max-width: 425px) {
-  .header-wrapper{
-    display: block;
-    height: 15vh;
+  .acc{
+    font-size: 0.7rem;
+  }
+  .header-wrapper h1{
+    margin: 0;
+    padding: 0;
+    font-size: .8rem;
   }
   .sidebar-wrapper{
-    top:15%;
+    top:10%;
+  }
+  .acc{
+    margin-top: 10vh;
   }
   
   .header-wrapper h1{
-    font-size: 5vw;
+    font-size: 3.5vw;
   }
   .title{
-    height: 8vh;
-    width: fit-content;
+    width:60%;
+  
   }
   .lang{
-    width: fit-content;
+    width: 40%;
   
   }
   .icon{
@@ -225,37 +237,42 @@ export default {
     padding: 0.4rem;
     
   }
-  .sidebar-wrapper {
-    position: fixed;
-    top: 15%;
-    left: 0;
-    height: fit-content;
-    width: 100%;
-    
-    z-index: 100;
-    background-color: white;
-    margin:0;
-    
+  .langtxt{
+    width: 70%;
+    margin: 0;
+    text-align: left;
+    font-size: 0.5rem;
   }
-  .acc{
-    
-    color: red;
-    margin: 45vh 0 0 0 ;
+  .icon{
+    width: 30%;
+    margin: 0;
   }
-  .router-wrapper{
-    margin: 1rem 0 0 0 ;
-    width: 100%;
-     
+  .kz .icon{
+    margin: auto;
+    background: url(./assets/kz.svg) no-repeat;
+  }
+  .rus .icon{
+    margin: auto;
+    background: url(./assets/rus.svg) no-repeat;
+  }
+  .eng .icon{
+    margin: auto;
+    background: url(./assets/eng.svg) no-repeat;
+  }
   
-    padding: 1%;
-    
-   
-  }
+ 
+  
   /* CSS styles for mobile screens */
   /* ... */
 }
 @media (max-width: 320px){
+  .title{
+    width:50%;
+  }
+  .lang{
+    width: 50%;
   
+  }
   
 }
 </style>

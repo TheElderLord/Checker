@@ -123,14 +123,13 @@ export default {
 .sidebar {
     width: 25vw;
     height: 50vh;
-    background-color: white;
+    
 
 
 }
 
 .menu {
-    margin: 0;
-    padding: 0;
+    
     list-style-type: none;
     text-align: center;
     font-size: 1rem;
@@ -138,8 +137,9 @@ export default {
     background-color: #ffffff;
 
     padding: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin: 0.5rem;
     cursor: pointer;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 a {
@@ -149,24 +149,22 @@ a {
 
 @media (min-width: 320px) and (max-width: 425px) {
    
-    .sidebar {
-        width: 100vw;
-        height: fit-content;
-        background-color: white;
-    
-    
+    .sidebar{
+        width:30vw;
     }
     
     .menu {
+
         flex: 1;
+        width: fit-content;
         padding: 0.5rem;
         margin: 0;
-        font-size: 0.9rem;
+        font-size: 0.5rem;
         font-weight: normal;
         text-align:left;
       
         
-        margin-right: 5%;
+      
         border-bottom: 1px solid #e5e5e5;
     }
     

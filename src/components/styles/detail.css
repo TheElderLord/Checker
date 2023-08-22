@@ -1,3 +1,7 @@
+
+body{
+    background-color: aliceblue ;
+}
 .cards{
     margin-top: 3%;
     
@@ -13,10 +17,13 @@
     align-items: center;
     padding:2%;
     margin: 1% 0 0 0;
-    width: 100%;
+    width: 90%;
     background-color: #fff;
     border-radius: 1rem;
     box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+.card >div{
+    margin: 1rem;
 }
 .boldtxt{
     margin-top: 0.5%;
@@ -34,39 +41,33 @@
    
 }
 
-@media (max-width: 425px) {
+@media (min-width: 320px) and (max-width: 425px) {
+    *{
+        font-size: 0.5rem;
+    }
+    .card{
+        width: 80%;
+        margin: 0 auto;
+    }
     .boldtxt{
         width: 100%;
         
     }
     .regul{
+        margin-top: 0.4rem;
         width: 100%;
     }
-    .card{
-        width: 100%;
-    }
+    
     .card>div{
         display: flex;
         flex-flow: column nowrap;
         justify-content: center;
         align-items: center;
-    }
-    .cards{
-        margin-top: 3%;
-        width: 100%;
-    }
-    .container{
-        text-align: center;
-        width: 100%;
+        margin: 0.3rem;
     }
     
+    
 }
-@media (max-width: 320px) {
-    .boldtxt{
-        font-size: 0.7rem;
-    }
-    .regul{
-        font-size: 0.7rem;
-    }
 
-}
+ 
+

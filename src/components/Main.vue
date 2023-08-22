@@ -1,5 +1,5 @@
 <script type="module" src="./scripts/main.js"></script>
-<style>
+<style scoped>
 @import "./styles/main.css";
 </style>
 

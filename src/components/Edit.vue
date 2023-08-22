@@ -128,6 +128,9 @@ export default {
 </template>
 
 <style scoped>
+body{
+  background-color: aliceblue ;
+}
 main {
   display: flex;
   justify-content: center;
@@ -166,4 +169,10 @@ main {
   padding: 2%;
   margin: 0.5%;
 
-}</style>
+}
+@media (min-width: 320px) and (max-width: 425px) {
+  *{
+    font-size: 0.5rem;
+  }
+}
+</style>
