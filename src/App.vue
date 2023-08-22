@@ -208,7 +208,7 @@ export default {
     font-size: .8rem;
   }
   .sidebar-wrapper{
-    top:10%;
+    top:10.5%;
   }
   .acc{
     margin-top: 10vh;
@@ -268,10 +268,10 @@ export default {
 }
 @media (max-width: 320px){
   .header-wrapper{
-    height: 15vh;
+    height: 10vh;
   }
   .sidebar-wrapper{
-    margin-top: 10%;
+    top: 10%;
   }
   .acc{
     margin-top: 15vh;
