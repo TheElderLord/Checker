@@ -199,6 +199,9 @@ export default {
   .acc{
     font-size: 0.7rem;
   }
+  .header-wrapper{
+    height: 10vh;
+  }
   .header-wrapper h1{
     margin: 0;
     padding: 0;
@@ -211,9 +214,7 @@ export default {
     margin-top: 10vh;
   }
   
-  .header-wrapper h1{
-    font-size: 3.5vw;
-  }
+  
   .title{
     width:60%;
   
