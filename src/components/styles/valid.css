@@ -261,8 +261,7 @@ table {
     padding:2%;
     margin: 1% 0 0 0;
     width: 100%;
-    background-color: #fff;
-    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+   
 }
 .boldtxt{
     margin-top: 0.5%;
@@ -310,6 +309,7 @@ table {
     color: white
 }
 @media (min-width: 320px) and (max-width: 425px) {
+    
     .collapse-content{
      font-size: 0.5rem;
     }
@@ -321,3 +321,46 @@ table {
     }
     
  }
+ @media (min-width:320px) {
+    
+    .card-text{
+        
+        width: 100%;
+    }
+    .card-text .boldtxt{
+        width: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .card-text .boldtxt span{
+       font-size: 14px;
+    }
+    .card-text .regul{
+        width: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .card div:not(:first-child) {
+        display: block;
+        width: 100%;
+        
+        /* Your styles for the divs except the first one */
+      }
+        .card div:not(:first-child) .boldtxt{
+            width: 100%;
+            
+        }
+        .card div:not(:first-child) .regul{
+            width: 100%;
+            
+        }
+    .form-section input{
+        font-size: 0.5rem;
+    }
+      
+    
+    
+ }
+ 

@@ -101,15 +101,15 @@
               <button type="button" class="btn btn-success" id="verify-btn" data-localized="verify-btn" @click="checkDiploma()">{{lang === 'rus' ? 'Проверить' : lang ==='kz' ? 'Тексеру' : 'Check'}}</button>
             </div>
             <div class="cards" v-if="data">
-              <router-link :to="{ path: '/records', query: { lang,id:data.id } }">
+              <!-- <router-link :to="{ path: '/records', query: { lang,id:data.id } }"> -->
               <div class="card" >
                 <div class="card-text ">
 
                   <div class="boldtxt"><span class="material-symbols-outlined">
                     done
                     </span>
-                    Диплом действителен</div>
-                    <div class="regul"></div>
+                    </div>
+                    <div class="regul">Диплом действителен</div>
                 </div>
                <div class="org-name">
                 <div class="boldtxt"> Диплом выдан следующей организацией </div>
@@ -138,7 +138,7 @@
                </div>
               
               </div>
-            </router-link>
+            <!-- </router-link> -->
               
              
             </div>

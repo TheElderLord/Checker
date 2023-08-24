@@ -199,19 +199,30 @@ export default {
   .acc{
     font-size: 0.7rem;
   }
-  .header-wrapper{
-    height: 10vh;
-  }
+ 
   .header-wrapper h1{
     margin: 0;
     padding: 0;
     font-size: .8rem;
   }
   .sidebar-wrapper{
-    top:10.5%;
+    
+      top: calc(10vh + 1.5rem);
+    
+    width: 100%;
+    height: fit-content;
+  }
+  .router-wrapper{
+    margin-top: 22vh;
+    margin-left: 0;
+    width: 100%;
   }
   .acc{
-    margin-top: 10vh;
+    margin-top: calc(10vh + 1rem);
+  }
+  .header-wrapper{
+    height: 12vh;
+    display: block;
   }
   
   
@@ -220,7 +231,10 @@ export default {
   
   }
   .lang{
-    width: 40%;
+    position: absolute;
+    top:50%;
+    left: 33%;
+    width: 100%
   
   }
   .icon{
@@ -267,20 +281,31 @@ export default {
   /* ... */
 }
 @media (max-width: 320px){
-  .header-wrapper{
+  /*.header-wrapper{
     height: 10vh;
   }
   .sidebar-wrapper{
     top: 10%;
   }
+  */
+  .sidebar-wrapper{
+    top: calc(10vh + 1.5rem);
+  }
+  .header-wrapper{
+    height: 15vh;
+    display: block;
+  }
   .acc{
-    margin-top: 15vh;
+    margin-top: calc(14vh + 1rem);
   }
   .title{
     width:50%;
   }
   .lang{
-    width: 50%;
+    position: absolute;
+    top:60%;
+    left: 30%;
+    width: 100%
   
   }
   

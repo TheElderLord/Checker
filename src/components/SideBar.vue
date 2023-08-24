@@ -124,6 +124,7 @@ export default {
     width: 25vw;
     height: 50vh;
     
+    
 
 
 }
@@ -149,19 +150,26 @@ a {
 
 @media (min-width: 320px) and (max-width: 425px) {
    
+    aside{
+        width: 100%;
+        height: 100%;
+    }
     .sidebar{
-        width:30vw;
+        /*width:30vw;
+        */
+    width: 100%;
+    height: fit-content;
     }
     
     .menu {
 
         flex: 1;
-        width: fit-content;
+        width: 100%;
         padding: 0.5rem;
         margin: 0;
         font-size: 0.5rem;
         font-weight: normal;
-        text-align:left;
+        text-align:center;
       
         
       
