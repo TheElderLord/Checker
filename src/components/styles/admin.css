@@ -169,16 +169,16 @@ button{
   }
   @media (min-width: 320px) and (max-width: 425px){
     .font{
-        font-size: 0.5rem;
+        font-size: 1rem;
     }
     .form input[type = "text"]{
     
-       font-size: 0.5rem;
+       font-size: 1rem;
         
     }
     .form button{
         background-color: #4CAF50;
-        font-size: 0.5rem;
+        font-size: 1rem;
         color: white;
         width: 100%;
         padding: 2%;
@@ -193,15 +193,16 @@ button{
         justify-content: center;
     }
     .card{
-        
+        width: 100%;
         background-color: white;
         border-radius: 1.5rem;
-        padding: 2%;
+        padding: 1rem;
+        margin: 0.5rem;
         text-align: center;
         display: flex;
         flex-direction: row;
         box-shadow: 0 0 10px rgba(0,0,0,0.5);
-        font-size: 0.5rem;
+        font-size: 1rem;
         
     }
     .card div{
@@ -214,7 +215,7 @@ button{
         display: flex;
     }
     .control{
-        font-size: .5rem;
+        font-size: 1rem;
         display: flex;
       }
      
@@ -223,12 +224,12 @@ button{
         
        
         background-color: #4CAF50;
-        border-radius: 0.5rem;
+        border-radius: 1rem;
         color: white;
         text-align: center;
       }
       .edit a{
-        font-size: .5rem;
+        font-size: 1rem;
         
         
         color: white;
@@ -239,7 +240,7 @@ button{
         width: 100%;
       }
       .delete button{
-        font-size: .5rem;
+        font-size: 1rem;
         margin: 0;
         padding: 0.5rem; 
         text-align: center;
@@ -249,18 +250,18 @@ button{
       }
       .qrimage{
         height: 30%;
-        font-size: 0.5rem;
+        font-size: 1rem;
       }
       .qrimage button{
-        font-size: 0.5rem;
+        font-size: 1rem;
       }
       .qrimage a{
-        font-size: 0.5rem;
+        font-size: 1rem;
       }
       header h3{
-        font-size: 0.8rem;
+        font-size: 1rem;
       }
       .title h3{
-        font-size: 0.8rem;
+        font-size: 1rem;
       }
   }

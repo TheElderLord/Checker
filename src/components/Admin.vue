@@ -67,7 +67,7 @@
                 {{ lang === 'rus' ? 'День рождения' : lang === 'kz' ? 'Туған күні' : 'Date of Birth' }}
               </div>
               <div class="birthday">
-                {{ lang === 'rus' ? 'Организация' : lang === 'kz' ? 'Ұйым' : 'Organization' }}
+                {{ lang === 'rus' ? 'Действия' : lang === 'kz' ? 'Әрекет' : 'Actions' }}
               </div>
              </div>
             </div>

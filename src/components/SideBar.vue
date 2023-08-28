@@ -167,9 +167,9 @@ a {
         width: 100%;
         padding: 0.5rem;
         margin: 0;
-        font-size: 0.5rem;
+        font-size: 1rem;
         font-weight: normal;
-        text-align:center;
+        text-align:left;
       
         
       

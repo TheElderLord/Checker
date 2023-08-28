@@ -43,18 +43,19 @@ body{
 
 @media (min-width: 320px) and (max-width: 425px) {
     *{
-        font-size: 0.5rem;
+        font-size: 1rem!important;
     }
     .card{
-        width: 80%;
+        width: 100%;
         margin: 0 auto;
     }
     .boldtxt{
         width: 100%;
+        margin: 0.5rem!important;
         
     }
     .regul{
-        margin-top: 0.4rem;
+        margin: 0.5rem!important;
         width: 100%;
     }
     
@@ -63,7 +64,7 @@ body{
         flex-flow: column nowrap;
         justify-content: center;
         align-items: center;
-        margin: 0.3rem;
+        margin: 0.5rem;
     }
     
     

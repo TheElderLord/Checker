@@ -29,12 +29,51 @@ export default {
       
       // Update the component's local lang state if needed
       this.lang = newLang;
+    },
+    updateHeaderText(){
+      const currentPath = this.$route.path;
+      if(currentPath === '/main'){
+        if(this.lang === 'kz'){
+          this.headerTxt = 'ТжКБ ұйымдары дипломдарының дұрыстығын тексеру';
+
+        }
+        else if (this.lang === 'rus'){
+          this.headerTxt = 'Проверка валидности дипломов организаций ТиПО'
+        }
+        else this.headerTxt = 'Validation of University Diplomas'
+      }
+      else if (currentPath === '/check-valid'){
+        if(this.lang === 'kz'){
+          this.headerTxt = 'ЖОО дипломдарының дұрыстығын тексеру';
+        }
+        else if(this.lang === 'rus'){
+          this.headerTxt = 'Проверка валидности дипломов вуза';
+        }
+        else this.headerTxt = 'Validation of University Diplomas'
+
+      }
+      else if(currentPath === '/auth'){
+        if(this.lang === 'kz'){
+          this.headerTxt = 'ЖОО бойынша деректерді генерациялау';
+        }
+        else if(this.lang === 'rus'){
+          this.headerTxt = 'Генерация данных по дипломам ВУЗ'
+        }
+        else{
+          this.headerTxt = 'Generate University Diploma Data'
+        }
+      }
     }
   },
   computed: {
     shown() {
       return this.$route.path !== '/';
     },
+    
+  },
+  created() {
+    // Call a method to update the headerText based on the current URL
+    this.updateHeaderText();
   },
 }
 </script>
@@ -48,9 +87,9 @@ export default {
     <div class="lang">
       <div class="kz" @click="changeLang('kz')">
         <div class="icon"></div>
-        <div class="langtxt">kaz</div></div>
+        <div class="langtxt">қаз</div></div>
       <div class="rus" @click="changeLang('rus')"> <div class="icon"></div>
-      <div class="langtxt">rus</div></div>
+      <div class="langtxt">рус</div></div>
       <div class="eng" @click="changeLang('eng')"> <div class="icon"></div>
       <div class="langtxt">eng</div></div>
     </div>
@@ -83,6 +122,7 @@ export default {
 </template>
 
 <style scoped>
+
 #app{
   background-color: aliceblue ;
   
@@ -196,44 +236,46 @@ export default {
 
 
 @media (min-width: 320px) and (max-width: 425px) {
+  *{
+    overflow: hidden;
+  }
   .acc{
-    font-size: 0.7rem;
+    font-size: 1rem;
   }
  
   .header-wrapper h1{
     margin: 0;
     padding: 0;
-    font-size: .8rem;
+    font-size: 24px;
+    font-weight: normal;
   }
+ 
   .sidebar-wrapper{
-    
-      top: calc(10vh + 1.5rem);
-    
+    position: relative;
     width: 100%;
     height: fit-content;
   }
   .router-wrapper{
-    margin-top: 22vh;
+    
     margin-left: 0;
     width: 100%;
   }
-  .acc{
-    margin-top: calc(10vh + 1rem);
-  }
+  
   .header-wrapper{
-    height: 12vh;
+    position: relative;
+    height: 20vh;
     display: block;
   }
   
   
   .title{
-    width:60%;
+    width:100%;
   
   }
   .lang{
     position: absolute;
-    top:50%;
-    left: 33%;
+    top:65%;
+    left: 30%;
     width: 100%
   
   }
@@ -242,21 +284,17 @@ export default {
     padding: 0;
     width: fit-content;
   }
-  .langtxt{
-    width: fit-content;
-    margin: 0;
-    padding: 0;
-  }
+
   .lang div{
     width: fit-content;
     padding: 0.4rem;
     
   }
   .langtxt{
-    width: 70%;
+    width: 100%;
     margin: 0;
     text-align: left;
-    font-size: 0.5rem;
+    font-size: 1rem;
   }
   .icon{
     width: 30%;
@@ -274,6 +312,9 @@ export default {
     margin: auto;
     background: url(./assets/eng.svg) no-repeat;
   }
+  .acc{
+    margin: 0;
+  }
   
  
   
@@ -289,24 +330,36 @@ export default {
   }
   */
   .sidebar-wrapper{
-    top: calc(10vh + 1.5rem);
-  }
-  .header-wrapper{
-    height: 15vh;
-    display: block;
+    
   }
   .acc{
-    margin-top: calc(14vh + 1rem);
+    margin: 1rem;
   }
+  
+  .header-wrapper{
+    text-align: center;
+    height: 35vh;
+    display: block;
+  }
+  
   .title{
-    width:50%;
+    text-align: center;
+    width:100%;
+    font-weight: normal;
+  }
+  .title h1{
+    font-weight: normal;
   }
   .lang{
     position: absolute;
-    top:60%;
-    left: 30%;
-    width: 100%
+    top:70%;
+    left: 25%;
+    width: 100%;
+    
   
+  }
+  .lang > div{
+    font-size: 1.5rem;
   }
   
 }

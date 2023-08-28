@@ -311,13 +311,13 @@ table {
 @media (min-width: 320px) and (max-width: 425px) {
     
     .collapse-content{
-     font-size: 0.5rem;
+     font-size: 1rem;
     }
     #form{
-        font-size: 0.6rem;
+        font-size: 1rem;
     }
     .btn-success{
-        font-size: 0.6rem;
+        font-size: 1rem;
     }
     
  }
@@ -357,7 +357,7 @@ table {
             
         }
     .form-section input{
-        font-size: 0.5rem;
+        font-size: 1rem;
     }
       
     
