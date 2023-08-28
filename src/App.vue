@@ -338,7 +338,7 @@ export default {
   
   .header-wrapper{
     text-align: center;
-    height: 35vh;
+    height: 20vh;
     display: block;
   }
   
