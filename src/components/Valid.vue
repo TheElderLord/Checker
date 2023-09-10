@@ -100,63 +100,73 @@
             <div class="form-buttons">
               <button type="button" class="btn btn-success" id="verify-btn" data-localized="verify-btn" @click="checkDiploma()">{{lang === 'rus' ? 'Проверить' : lang ==='kz' ? 'Тексеру' : 'Check'}}</button>
             </div>
-            <div class="cards" v-if="data">
-              <!-- <router-link :to="{ path: '/records', query: { lang,id:data.id } }"> -->
-              <div class="card" >
-                <div class="card-text ">
-
-                  <div class="boldtxt"><span class="material-symbols-outlined">
-                    done
-                    </span>
-                    </div>
-                    <div class="regul">Диплом действителен</div>
-                </div>
-               <div class="org-name">
-                <div class="boldtxt"> Диплом выдан следующей организацией </div>
-               <!-- <div class="regul"> Некоммерческое акционарное общество «Казахский национальный университет имени Аль-Фараби»</div> -->
-                <div class="regul">{{ data.organ_title }}</div> 
-               </div>
-               <div class="full-name">
-                <div  class="boldtxt">Фамилия, имя, отчество выпускника</div>
-                <!-- <div class="regul">Алимбай Абай Кайратбекулы</div> -->
-                 <div class="regul"> {{ data.fullname }}</div>
-               </div>
-               <div class="spec">
-                <div  class="boldtxt">Специальность</div>
-                <!-- <div class="regul">5B020300-История</div> -->
-                 <div class="regul"> {{ data.diplom_number }}</div>
-               </div>
-               <div class="study-period">
-                <div  class="boldtxt">Период обучения</div>
-                <!-- <div class="regul">2017-2021</div> -->
-                 <div class="regul"> {{ data.studying_period }}</div>
-               </div>
-               <div class="study-type">
-                <div  class="boldtxt">Форма обучения</div>
-                <!-- <div class="regul">Очная</div> -->
-                 <div class="regul"> {{ data.study_type }}</div>
-               </div>
-              
-              </div>
-            <!-- </router-link> -->
-              
-             
-            </div>
-            <div class="notdata" v-if="data==undefined">
-              <div class="notdata-text" data-localized="notdata-text">Сведения о дипломе не найдены</div>
-              <div class="notdata-par"><p>В настоящее время в ИС "Национальная образовательная база данных" отсутвуют сведения о наличия дипломов о высшем и (или) 
-                послевузовском образовании с указанными выше данными. Для получения информации о валидности или оцифровке диплома о высшем и (или)
-                послевузовском образовании. Вам необходимо обратиться в организацию высшего и (или) послевузовского образования, в которой вы получили диплом.
-                образования.Вы можете посмотреть на специальной странице.
-              </p></div>
-              <div class="notdata-butt">
-                <a href="../assets/gg.docx" download>Посмотреть список</a>
-              </div>
-            </div>
+           
   
           </div>
           
          
+        </div>
+        <div class="cards" v-if="data">
+          <!-- <router-link :to="{ path: '/records', query: { lang,id:data.id } }"> -->
+          <div class="card" >
+            <div class="card-text ">
+
+              <!-- <div class="boldtxt"><span class="material-symbols-outlined">
+                done
+                </span>
+                </div> -->
+                <div class="regul">✔ {{lang == 'rus' ? 'Диплом действителен' : lang=='kz'? 'Диплом жарамды'
+                  : 'Diploma is valid'}}</div>
+            </div>
+           <div class="org-name">
+            <div class="boldtxt"> {{lang == 'rus' ? 'Диплом выдан следующей организацией':lang=='kz'? '':''}} </div>
+           <!-- <div class="regul"> Некоммерческое акционарное общество «Казахский национальный университет имени Аль-Фараби»</div> -->
+            <div class="regul">{{ data.organ_title }}</div> 
+           </div>
+           <div class="full-name">
+            <div  class="boldtxt">{{lang=='rus'?'Фамилия, имя, отчество выпускника':lang=='kz'? 'Тегі, аты, әкесінің аты':'Last name, first name, patronymic of the graduate'}}</div>
+            <!-- <div class="regul">Алимбай Абай Кайратбекулы</div> -->
+             <div class="regul"> {{ data.fullname }}</div>
+           </div>
+           <div class="spec">
+            <div  class="boldtxt">{{lang == 'rus'? 'Специальность' : lang=='kz'? 'Мамандық':'Speciality'}}</div>
+            <!-- <div class="regul">5B020300-История</div> -->
+             <div class="regul"> {{ data.diplom_number }}</div>
+           </div>
+           <div class="study-period">
+            <div  class="boldtxt">{{lang ==='rus' ? 'Период обучения'
+              : lang ==='kz' ? 'Оқу уақыты' : 'Stydying period'}}</div>
+            <!-- <div class="regul">2017-2021</div> -->
+             <div class="regul"> {{ data.studying_period }}</div>
+           </div>
+           <div class="study-type">
+            <div  class="boldtxt">{{lang ==='rus' ? 'Форма обучения' : lang ==='kz'?'Оқу форматы' : 'Type of study'}}</div>
+            <!-- <div class="regul">Очная</div> -->
+             <div class="regul"> {{ data.study_type }}</div>
+           </div>
+          
+          </div>
+        <!-- </router-link> -->
+          
+         
+        </div>
+        <div class="notdata cards" v-if="data==undefined">
+          <div class="notdata-text" data-localized="notdata-text">{{lang == 'rus'? 'Сведения о дипломе не найдены': lang == 'kz' ? 'Диплом туралы мәліметтер табылған жоқ': 'Information about the diploma was not found'}}</div>
+          <div class="notdata-par"><p>{{lang =='rus' ?`В настоящее время в ИС "Национальная образовательная база данных" отсутвуют сведения о наличия дипломов о высшем и (или) 
+            послевузовском образовании с указанными выше данными. Для получения информации о валидности или оцифровке диплома о высшем и (или)
+            послевузовском образовании. Вам необходимо обратиться в организацию высшего и (или) послевузовского образования, в которой вы получили диплом.
+            образования.Вы можете посмотреть на специальной странице.` 
+          : lang == 'kz' ? `Қазіргі уақытта "Ұлттық білім беру деректер базасы" АЖ-да жоғары және (немесе)туралы дипломдардың болуы туралы мәліметтер жоқ 
+          жоғарыда көрсетілген мәліметтермен жоғары оқу орнынан кейінгі білім беру. Жоғары және (немесе)дипломның жарамдылығы немесе цифрлануы туралы ақпарат алу үшін
+          жоғары оқу орнынан кейінгі білім. Сіз диплом алған жоғары және (немесе) жоғары оқу орнынан кейінгі білім беру ұйымына жүгінуіңіз керек.
+          білім беру.Сіз арнайы беттен көре аласыз.`: `Currently, there is no information on the availability of diplomas of higher and (or) higher education in the IS "National Educational Database". 
+          postgraduate education with the above data. To obtain information about the validity or digitization of the diploma of higher and (or)
+          postgraduate education. You need to contact the organization of higher and (or) postgraduate education in which you received a diploma.
+          education.You can look at the special page.`}}
+          </p></div>
+          <div class="notdata-butt">
+            <a href="../assets/gg.docx" download>{{lang == 'rus' ? 'Посмотреть список' : lang == 'kz' ? 'Тізімді көру' : 'Show a list'}}</a>
+          </div>
         </div>
 
        

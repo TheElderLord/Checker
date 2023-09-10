@@ -30,40 +30,40 @@ export default {
       // Update the component's local lang state if needed
       this.lang = newLang;
     },
-    updateHeaderText(){
-      const currentPath = this.$route.path;
-      if(currentPath === '/main'){
-        if(this.lang === 'kz'){
-          this.headerTxt = 'ТжКБ ұйымдары дипломдарының дұрыстығын тексеру';
+    // updateHeaderText(){
+    //   const currentPath = this.$route.path;
+    //   if(currentPath === '/main'){
+    //     if(this.lang === 'kz'){
+    //       this.headerTxt = 'ТжКБ ұйымдары дипломдарының дұрыстығын тексеру';
 
-        }
-        else if (this.lang === 'rus'){
-          this.headerTxt = 'Проверка валидности дипломов организаций ТиПО'
-        }
-        else this.headerTxt = 'Validation of University Diplomas'
-      }
-      else if (currentPath === '/check-valid'){
-        if(this.lang === 'kz'){
-          this.headerTxt = 'ЖОО дипломдарының дұрыстығын тексеру';
-        }
-        else if(this.lang === 'rus'){
-          this.headerTxt = 'Проверка валидности дипломов вуза';
-        }
-        else this.headerTxt = 'Validation of University Diplomas'
+    //     }
+    //     else if (this.lang === 'rus'){
+    //       this.headerTxt = 'Проверка валидности дипломов организаций ТиПО'
+    //     }
+    //     else this.headerTxt = 'Validation of University Diplomas'
+    //   }
+    //   else if (currentPath === '/check-valid'){
+    //     if(this.lang === 'kz'){
+    //       this.headerTxt = 'ЖОО дипломдарының дұрыстығын тексеру';
+    //     }
+    //     else if(this.lang === 'rus'){
+    //       this.headerTxt = 'Проверка валидности дипломов вуза';
+    //     }
+    //     else this.headerTxt = 'Validation of University Diplomas'
 
-      }
-      else if(currentPath === '/auth'){
-        if(this.lang === 'kz'){
-          this.headerTxt = 'ЖОО бойынша деректерді генерациялау';
-        }
-        else if(this.lang === 'rus'){
-          this.headerTxt = 'Генерация данных по дипломам ВУЗ'
-        }
-        else{
-          this.headerTxt = 'Generate University Diploma Data'
-        }
-      }
-    }
+    //   }
+    //   else if(currentPath === '/auth'){
+    //     if(this.lang === 'kz'){
+    //       this.headerTxt = 'ЖОО бойынша деректерді генерациялау';
+    //     }
+    //     else if(this.lang === 'rus'){
+    //       this.headerTxt = 'Генерация данных по дипломам ВУЗ'
+    //     }
+    //     else{
+    //       this.headerTxt = 'Generate University Diploma Data'
+    //     }
+    //   }
+    // }
   },
   computed: {
     shown() {
@@ -73,7 +73,7 @@ export default {
   },
   created() {
     // Call a method to update the headerText based on the current URL
-    this.updateHeaderText();
+    // this.updateHeaderText();
   },
 }
 </script>
@@ -96,6 +96,7 @@ export default {
     </div>
    
     <div class="menus" v-if="!shown">
+      
       <div class="menu">
         <router-link :to="{ path: '/main', query: { lang } }">{{ lang === 'rus' ? 'Проверка валидности дипломов организаций ТиПО' : lang === 'kz' ? 'ТжКБ ұйымдары дипломдарының дұрыстығын тексеру' : 'Validation of University Diplomas' }}</router-link>
       </div>
@@ -114,21 +115,26 @@ export default {
       <Sidebar @data-sent="receiveDataFromChild" :lang="lang"/>
     </div>
     <div class="router-wrapper">
-      <div class="acc">Ведутся технические работы</div>
+      <div class="acc" v-if="shown">Ведутся технические работы</div>
       <router-view />
     </div>
+    <footer>
+      <div class="foottxt">АО ИАЦ,2023 год</div>
+    </footer>
     
   </div>
 </template>
 
 <style scoped>
-
+*{
+  overflow: hidden;
+}
 #app{
   background-color: aliceblue ;
   
 }
 .acc{
-  margin-top: 12vh;
+  
   color: red;
   display: flex;
   justify-content: center;
@@ -137,9 +143,7 @@ export default {
   
 }
 .header-wrapper{
-  position: fixed;
-  top: 0;
-  left: 0;
+ 
   width: 100%;
   height: 10vh;
   display: flex;
@@ -194,11 +198,9 @@ export default {
 
 .menus{
   display: flex;
-  align-items: center;
-  margin-top: 10vh;
-  height: 70vh;
+  height: 100%;
   width: 80%;
-  margin: 0 auto;
+  margin: 30vh auto 0 auto;
 }
 
 .menu{
@@ -206,23 +208,22 @@ export default {
   text-align: center;
   margin: 1rem;
   padding: 1rem;
+  background-color: white;
 }
 .menu a{
   color:black;
   text-decoration: none;
+  font-size: 1rem;
   
 }
 .sidebar-wrapper {
-  position: fixed;
-  top: 8%;
-  left: 0;
-  bottom: 0;
+  position: absolute;
   width: 25vw;
-  height: 50vh;
+  height: 100%;
   z-index: 100;
- 
+  
   margin:0;
-  padding: 1% 0.5% 0 0.5%;
+  
 }
 .router-wrapper{
   margin-left: 25vw;
@@ -242,7 +243,10 @@ export default {
   .acc{
     font-size: 1rem;
   }
- 
+ .menus{
+  flex-wrap: wrap;
+  flex-direction: column;
+ }
   .header-wrapper h1{
     margin: 0;
     padding: 0;
@@ -254,6 +258,7 @@ export default {
     position: relative;
     width: 100%;
     height: fit-content;
+    font-size: 1rem;
   }
   .router-wrapper{
     
@@ -263,20 +268,24 @@ export default {
   
   .header-wrapper{
     position: relative;
-    height: 20vh;
+    height: fit-content;
     display: block;
+    overflow: hidden;
+    
   }
   
   
   .title{
-    width:100%;
+    width: 100%;
+    padding: 15px 30px;
+    text-align: center;
   
   }
   .lang{
-    position: absolute;
-    top:65%;
-    left: 30%;
-    width: 100%
+    
+    display: flex;
+    justify-content: center;
+    width: 100%;
   
   }
   .icon{
@@ -297,23 +306,39 @@ export default {
     font-size: 1rem;
   }
   .icon{
-    width: 30%;
+    
     margin: 0;
   }
   .kz .icon{
+    width:24px;
+    height: 18px;
+    border-radius: 5px;
     margin: auto;
     background: url(./assets/kz.svg) no-repeat;
   }
   .rus .icon{
+    width:24px;
+    height: 18px;
     margin: auto;
+    border-radius: 5px;
     background: url(./assets/rus.svg) no-repeat;
   }
   .eng .icon{
+    width:24px;
+    height: 18px;
     margin: auto;
+    border-radius: 5px;
     background: url(./assets/eng.svg) no-repeat;
   }
   .acc{
     margin: 0;
+  }
+  .foottxt{
+    margin-top: 1rem;
+    font-size: 1rem;
+    padding: 0.5rem;
+    text-align: center;
+    background-color: white;
   }
   
  
@@ -321,14 +346,14 @@ export default {
   /* CSS styles for mobile screens */
   /* ... */
 }
-@media (max-width: 320px){
+/*@media (max-width: 320px){
   /*.header-wrapper{
     height: 10vh;
   }
   .sidebar-wrapper{
     top: 10%;
   }
-  */
+  
   .sidebar-wrapper{
     
   }
@@ -362,7 +387,8 @@ export default {
     font-size: 1.5rem;
   }
   
-}
+}*/
+
 </style>
 
 

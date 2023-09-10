@@ -322,7 +322,16 @@ table {
     
  }
  @media (min-width:320px) {
-    
+    .cards{
+        margin-left: 1.9rem;
+        min-width: min(560px, 65%);
+        margin-top: 0.5px;
+    max-width: calc(100% - 60px);
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    padding: 15px;
+    }
     .card-text{
         
         width: 100%;
@@ -341,6 +350,7 @@ table {
         display: flex;
         justify-content: center;
         align-items: center;
+        font-weight: normal;
     }
     .card div:not(:first-child) {
         display: block;
@@ -360,6 +370,9 @@ table {
         font-size: 1rem;
     }
       
+    #verify-btn{
+        margin-top: 1rem;
+    }
     
     
  }

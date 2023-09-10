@@ -64,7 +64,47 @@ export default {
 
     methods: {
         emitHeaderText(txt) {
-            this.txt = txt;
+          
+                if(txt == 'ТжКБ ұйымдары дипломдарының дұрыстығын тексеру'){
+                    this.txt = 'Қазақстан Республикасының техникалық және кәсіптік білім беру ұйымдары дипломдарының жарамдылығын тексеру';
+                }
+                else if(txt == 'ЖОО дипломдарының дұрыстығын тексеру'){
+                    this.txt = 'Қазақстан Республикасының жоғары және жоғары оқу орнынан кейінгі білім беру ұйымдары дипломдарының валидтілігін тексеру';
+                }
+                else if(txt == 'ТжКБ бойынша деректерді генерациялау'){
+                    this.txt = 'Жүйеге кіру';
+                }
+                else if(txt == 'ЖОО дипломдары бойынша деректер генерациясы'){
+                    this.txt = 'Жүйеге кіру';
+                }
+             
+                if(txt == 'Проверка валидности дипломов организаций ТиПО'){
+                    this.txt = 'Проверка валидности дипломов организаций технического и професиионального образования Республики Казахстан';
+                }
+                else if(txt == 'Проверка валидности дипломов вуза'){
+                    this.txt = 'Проверка валидности дипломов организаций высшего и послевузовского образования Республики Казахстан';
+                }
+                else if(txt == 'Генерация данных по ТиПО'){
+                    this.txt = 'Вход в систему';
+                }
+                else if(txt == 'Генерация данных по вузам'){
+                    this.txt = 'Вход в систему';
+                }
+            
+                if(txt == 'Validation of Organization Diplomas'){
+                    this.txt = 'Validation of Organization Diplomas of the Republic of Kazakhstan';
+                }
+                else if(txt == 'Validation of University Diplomas'){
+                    this.txt = 'Validation of University Diplomas of the Republic of Kazakhstan';
+                }
+                else if(txt == 'Generate Organization Data'){
+                    this.txt = 'Login';
+                }
+                else if(txt == 'Generating data on university diplomas'){
+                    this.txt = 'Login';
+                }
+             
+            
             this.$emit('data-sent', this.txt);
         },
         changeLang() {
@@ -179,6 +219,7 @@ a {
     a {
         text-decoration: none;
         color: black;
+        font-size: 1rem;
     }
     
     
