@@ -119,7 +119,7 @@ export default {
       <router-view />
     </div>
     <footer>
-      <div class="foottxt">АО ИАЦ,2023 год</div>
+      <div class="foottxt" v-if="shown">АО ИАЦ,2023 год</div>
     </footer>
     
   </div>
@@ -233,6 +233,11 @@ export default {
   padding: 1%;
   
  
+}
+.foottxt{
+  text-align: center;
+  padding: 1rem;
+  background-color: white;
 }
 
 
