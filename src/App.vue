@@ -118,9 +118,9 @@ export default {
       <div class="acc" v-if="shown">Ведутся технические работы</div>
       <router-view />
     </div>
-    <footer>
+    <!-- <footer>
       <div class="foottxt" v-if="shown">АО ИАЦ,2023 год</div>
-    </footer>
+    </footer> -->
     
   </div>
 </template>
@@ -145,7 +145,7 @@ export default {
 .header-wrapper{
  
   width: 100%;
-  height: 10vh;
+  height: fit-content;
   display: flex;
   background: #15435f;
   color: white;
@@ -158,11 +158,11 @@ export default {
   font-size: 2vw;
 }
 .title{
-  width: 80%;
+  width: 75%;
   margin: auto;
 }
 .lang{
-  width: 20%;
+  width: 25%;
   display: flex;
   margin: auto;
   
@@ -170,7 +170,7 @@ export default {
 
 .lang div{
 
-  padding: 0.5rem;
+  padding: 0.8rem;
   cursor: pointer;
   display: flex;
 }
@@ -231,6 +231,7 @@ export default {
   /* margin-top: 10vh; */
 
   padding: 1%;
+  
   
  
 }
