@@ -6,17 +6,18 @@ body{
     margin-top: 3%;
     
     
+    
 }
 .container{
     text-align: center;
 }
-.card{
+.cards{
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
     padding:2%;
-    margin: 1% 0 0 0;
+    margin: 1% auto 0 auto;
     width: 90%;
     background-color: #fff;
     border-radius: 1rem;
