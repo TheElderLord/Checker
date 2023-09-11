@@ -93,6 +93,8 @@ button{
     margin: 2% auto 0 auto;
     display: flex;
     justify-content: center;
+    background-color: aliceblue;
+    box-shadow: none;
 }
 .card{
     width: 80%;
