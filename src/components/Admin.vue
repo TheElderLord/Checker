@@ -55,8 +55,8 @@
               </div>
               
 
-            <div class="cards">
-            <div class="card">
+            <div class="cars">
+            <div class="car">
                 <div class="fullname">
                     {{ lang === 'rus' ? 'Ф.И.О' : lang === 'kz' ? 'Аты-жөні' : 'Full Name'  }}
             </div>
@@ -71,9 +71,9 @@
               </div>
              </div>
             </div>
-            <div class="cards" v-for="d in data" :key="d.id">
+            <div class="cars" v-for="d in data" :key="d.id">
                 
-                <div class="card">
+                <div class="car">
                  
                     <div class="fullname">
                    {{ d.fullname }}

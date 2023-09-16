@@ -254,6 +254,7 @@ table {
     
 }
 .card{
+    line-height: 2rem;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -308,20 +309,8 @@ table {
     text-decoration: none;
     color: white
 }
-@media (min-width: 320px) and (max-width: 425px) {
-    
-    .collapse-content{
-     font-size: 1rem;
-    }
-    #form{
-        font-size: 1rem;
-    }
-    .btn-success{
-        font-size: 1rem;
-    }
-    
- }
- @media (min-width:320px) {
+
+ @media (min-width: 320px) and (max-width: 425px) {
     .cards{
         margin-left: 1.9rem;
         min-width: min(560px, 65%);
@@ -336,11 +325,12 @@ table {
         
         width: 100%;
     }
+    .card > div:not(:first-child){
+        margin-top: 0.5rem;
+    }
     .card-text .boldtxt{
-        width: fit-content;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        
+        
     }
     .card-text .boldtxt span{
        font-size: 14px;
@@ -360,10 +350,16 @@ table {
       }
         .card div:not(:first-child) .boldtxt{
             width: 100%;
+            flex: 1;
+        margin:0;
+        font-weight: bold;
+        text-align: left;
+        line-height: 1.5rem;
             
         }
         .card div:not(:first-child) .regul{
             width: 100%;
+            line-height: 1.5rem;
             
         }
     .form-section input{

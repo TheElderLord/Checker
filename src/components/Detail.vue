@@ -7,8 +7,8 @@
 
    <main>
     <div class="container">{{lang === 'rus' ? 'Информация' : lang === 'kz' ? 'Ақпарат' : 'Information'}}
-      <div class="cards" v-if="data" >
-         <div class="card" >
+      <div class="caps" v-if="data" >
+         <div class="cap" >
           <div class="org-name">
            <div class="boldtxt"> {{ lang === 'rus' ? 'Диплом выдан следующей организацией' : 
             lang === 'kz' ? 'Диплом берілген мекеме' : 'The diploma was issued by the following organization'}} </div>

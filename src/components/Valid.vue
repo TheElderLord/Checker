@@ -109,17 +109,17 @@
         <div class="cards" v-if="data">
           <!-- <router-link :to="{ path: '/records', query: { lang,id:data.id } }"> -->
           <div class="card" >
-            <div class="card-text ">
+            <div class="card-text " style="margin-top:-0.5rem!important">
 
               <!-- <div class="boldtxt"><span class="material-symbols-outlined">
                 done
                 </span>
                 </div> -->
-                <div class="regul">✔ {{lang == 'rus' ? 'Диплом действителен' : lang=='kz'? 'Диплом жарамды'
+                <div class="regul" style="color:green!important;">✔ {{lang == 'rus' ? 'Диплом действителен' : lang=='kz'? 'Диплом жарамды'
                   : 'Diploma is valid'}}</div>
             </div>
            <div class="org-name">
-            <div class="boldtxt"> {{lang == 'rus' ? 'Диплом выдан следующей организацией':lang=='kz'? '':''}} </div>
+            <div class="boldtxt"> {{lang == 'rus' ? 'Диплом выдан следующей организацией':lang=='kz'? 'Дипломды келесі ұйым береді':'The diploma was issued by the following organization'}} </div>
            <!-- <div class="regul"> Некоммерческое акционарное общество «Казахский национальный университет имени Аль-Фараби»</div> -->
             <div class="regul">{{ data.organ_title }}</div> 
            </div>

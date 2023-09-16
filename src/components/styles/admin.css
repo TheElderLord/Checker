@@ -88,7 +88,7 @@ button{
     
     
 }
-.cards{
+.cars{
     width: 100%;
     margin: 2% auto 0 auto;
     display: flex;
@@ -96,7 +96,7 @@ button{
     background-color: aliceblue;
     box-shadow: none;
 }
-.card{
+.car{
     width: 80%;
     background-color: white;
     border-radius: 1.5rem;
@@ -107,10 +107,10 @@ button{
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     
 }
-.card div{
+.car div{
     width: 100%;
 }
-.card a{
+.car a{
     width: 100%;
     text-decoration: none;
     color: black;
@@ -188,13 +188,13 @@ button{
         
     }
   
-    .cards{
+    .cars{
         width: 100%;
         margin: 2% auto 0 auto;
         display: flex;
         justify-content: center;
     }
-    .card{
+    .car{
         width: 100%;
         background-color: white;
         border-radius: 1.5rem;
@@ -207,10 +207,10 @@ button{
         font-size: 1rem;
         
     }
-    .card div{
+    .car div{
         width: 100%;
     }
-    .card a{
+    .car a{
         width: 100%;
         text-decoration: none;
         color: black;
