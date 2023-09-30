@@ -3,6 +3,7 @@ export default {
     data() {
         return {
             data:null,
+           
         }
     },
     
@@ -12,17 +13,19 @@ export default {
             const backhost = import.meta.env.VITE_SERVER_BACKEND_HOST;
             const backport = import.meta.env.VITE_SERVER_BACKEND_PORT;
             const response = await fetch(`http://${backhost}:${backport}/records/${this.id}`);
-            console.log(response);
+        
             const data = await response.json();
             this.data = data[0];
             
         }
     },
-    async mounted() {
+     mounted() {
+       
         console.log(this.id);
         console.log(this.lang);
-        if(this.ur)
-        await this.getData(); // Wait for the API request to complete
+        
+         this.getData();
+        // Wait for the API request to complete
     },
 
 }
