@@ -46,28 +46,9 @@ body{
     *{
         font-size: 1rem!important;
     }
-    .cap{
-        width: 100%;
-        margin: 0 auto;
-    }
-    .boldtxt{
-        width: 100%;
-        margin: 0.5rem!important;
-        
-    }
     .regul{
-        margin: 0.5rem!important;
-        width: 100%;
+        text-align: left!important;
     }
-    
-    .cap>div{
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: center;
-        align-items: center;
-        margin: 0.5rem;
-    }
-    
     
 }
 

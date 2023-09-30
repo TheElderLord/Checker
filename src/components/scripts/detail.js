@@ -20,7 +20,8 @@ export default {
     async mounted() {
         console.log(this.id);
         console.log(this.lang);
-        
+        if(this.ur)
         await this.getData(); // Wait for the API request to complete
     },
+
 }

@@ -249,19 +249,27 @@ table {
 }
 
 .cards{
-    margin-top: 3%;
+    /* margin-top: 3%; */
+    
+    margin-left: 1.9rem;
+    padding:2rem;
+    margin: 2% auto 0 auto;
+        min-width: min(560px, 65%);
+        margin-top: 0.5px;
+    max-width: calc(100% - 60px);
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    
     
     
 }
 .card{
-    line-height: 2rem;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    padding:2%;
+   
+   
     margin: 1% 0 0 0;
     width: 100%;
+    
    
 }
 .boldtxt{
