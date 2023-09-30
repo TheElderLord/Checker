@@ -12,6 +12,7 @@ export default {
             const backhost = import.meta.env.VITE_SERVER_BACKEND_HOST;
             const backport = import.meta.env.VITE_SERVER_BACKEND_PORT;
             const response = await fetch(`http://${backhost}:${backport}/records/${this.id}`);
+            console.log(response);
             const data = await response.json();
             this.data = data[0];
             
